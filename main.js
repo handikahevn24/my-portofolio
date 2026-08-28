@@ -352,14 +352,28 @@ function projectLinks(project) {
   if (project.scope !== 'public') return '';
 
   const links = (project.links || [])
-    .map((link) => ({ label: escapeHtml(link.label || ''), url: safePublicUrl(link.url) }))
+    .map((link, index) => {
+      const rawUrl = typeof link === 'string' ? link : link?.url;
+      const url = safePublicUrl(rawUrl);
+      let label = typeof link === 'string' ? '' : link?.label;
+
+      if (!label && url) {
+        const hostname = new URL(url).hostname.toLowerCase();
+        label = hostname === 'github.com' || hostname.endsWith('.github.com')
+          ? 'Source Code'
+          : index === 0 ? 'View Live App' : `Project Link ${index + 1}`;
+      }
+
+      return { label: escapeHtml(label || ''), url };
+    })
     .filter((link) => link.label && link.url);
   if (!links.length) return '';
 
   return `
     <div class="project-links" aria-label="Public project links">
       ${links.map((link) => `
-        <a class="project-link" href="${link.url}" target="_blank" rel="noopener noreferrer">
+        <a class="project-link" href="${link.url}" target="_blank" rel="noopener noreferrer"
+          aria-label="${link.label}: ${escapeHtml(project.title)}">
           <span>${link.label}</span><span aria-hidden="true">↗</span>
         </a>
       `).join('')}
