@@ -2,13 +2,8 @@
    HANDIKA PORTFOLIO — INTERACTIONS
    ============================================ */
 
-// ---- Typing Effect ----
-const phrases = [
-  'Enterprise workflow builder',
-  'Laravel & Flutter engineer',
-  'Cloud and integration specialist',
-  'Human-led, AI-accelerated delivery',
-];
+document.documentElement.classList.add('js');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ---- Privacy-safe project catalog ----
 // Internal names, endpoints, credentials, customer data, and infrastructure details
@@ -25,18 +20,18 @@ const projects = [
   },
   {
     code: 'CF02', title: 'Farm Business Manager', period: 'Aug 2026', scope: 'internal', ai: true,
-    featured: true, category: 'Cloud Operations',
+    category: 'Cloud Operations',
     summary: 'A role-aware operations and investor ledger for digital farming businesses, including assets, cash flow, BEP recovery, and settlement rules.',
     stack: ['React', 'Hono', 'Cloudflare', 'D1', 'Drizzle'],
   },
   {
     code: 'FL02', title: 'Material Issue & Return Mobile', period: 'Dec 2025—May 2026', scope: 'internal', ai: false,
-    category: 'Mobile Operations',
+    featured: true, category: 'Mobile Operations',
     summary: 'A Flutter field application for material issue, return, approvals, and QR scanning backed by cached enterprise inventory data.',
     stack: ['Flutter', 'Dart', 'REST API', 'Oracle', 'Redis'],
   },
   {
-    code: 'JS03', title: 'Premium Product Landing Page', period: 'Feb—Aug 2026', scope: 'public', ai: true,
+    code: 'JS03', title: 'Premium Product Landing Page (Rumah Mayin)', period: 'Feb—Aug 2026', scope: 'public', ai: true,
     category: 'Frontend & Conversion',
     summary: 'A responsive product story with optimized media, trust-building sections, WhatsApp conversion paths, and CTA attribution.',
     stack: ['HTML', 'CSS', 'JavaScript', 'Vite', 'WebP'],
@@ -111,14 +106,12 @@ const projects = [
   },
   {
     code: 'P808', title: 'Incident & Trouble Report System', period: 'Jun 2021—Aug 2026', scope: 'internal', ai: true,
-    featured: true,
     category: 'Safety & Operations',
     summary: 'An incident-to-corrective-action platform covering investigation, risk, approvals, reminders, evidence, and consolidated reporting.',
     stack: ['Laravel 8', 'Queues', 'Dompdf', 'Docker', 'RBAC'],
   },
   {
     code: 'P810', title: 'Lot History & Production Monitoring', period: 'Oct 2024—Mar 2026', scope: 'internal', ai: true,
-    featured: true,
     category: 'Manufacturing Data',
     summary: 'Production traceability through lot history, grade lookup, time records, DCS trends, operational reports, and permission controls.',
     stack: ['Laravel 8', 'Charts', 'Excel', 'Telescope', 'Docker'],
@@ -294,19 +287,84 @@ const projectFlows = {
   OT08: 'Customer places a rental order → administrator schedules unit and delivery → driver updates handoff and pickup → payment is reconciled.',
 };
 
-const projectVisuals = {
-  'Applied AI': '◎',
-  'Integration Platform': '⇄',
-  'Identity Platform': '⌘',
-  'Quality Systems': '◇',
-  'Manufacturing Planning': '▥',
-  'Cloud Operations': '◫',
-  'Cloud Commerce': '◈',
-  'Enterprise Workflow': '⌁',
+const featuredCaseStudies = {
+  CF01: {
+    role: 'Full-stack and platform engineering',
+    problem: 'A public storefront needed catalog, checkout, order tracking, and operator workflows without relying on a traditional server stack.',
+    solution: 'An edge-first application separates storefront concerns, order rules, validation, data access, and media while keeping the operational flow testable.',
+    architecture: ['Astro / React', 'Workers API', 'D1 / R2', 'Order operations'],
+    contribution: 'Built the storefront foundation, core commerce flow, data model, validation boundaries, deployment setup, and automated quality checks.',
+    challenge: 'Keeping tenant-aware data, order-state transitions, and preview-versus-production configuration consistent across an edge deployment.',
+    outcome: 'A deployable commerce foundation with traceable order operations and clear boundaries between presentation, business rules, data, and media.',
+  },
+  FL02: {
+    role: 'Mobile and integration engineering',
+    problem: 'Warehouse activity needed a mobile workflow for material issue and return while continuing to use existing enterprise inventory data.',
+    solution: 'A Flutter application handles operational screens and scanning while a secured integration layer validates requests and caches repeated reads.',
+    architecture: ['Flutter client', 'REST integration', 'Redis cache', 'Enterprise inventory'],
+    contribution: 'Implemented mobile navigation, request lists and details, approval views, QR scanning, error states, retry behaviour, and API integration.',
+    challenge: 'Providing responsive field use while protecting the mobile client from legacy data latency and inconsistent connectivity.',
+    outcome: 'A practical mobile interface that brings scanning, review, and material processing into one controlled workflow.',
+  },
+  P806: {
+    role: 'Backend, workflow, and AI tooling',
+    problem: 'Work requests, approvals, documents, realization records, and reporting needed one traceable lifecycle instead of disconnected handling.',
+    solution: 'A Laravel workflow application models the approval path and exposes guarded API and MCP tools for controlled read and write operations.',
+    architecture: ['Web application', 'Laravel domain/API', 'Relational data and files', 'Guarded MCP tools'],
+    contribution: 'Built work-order lifecycle features, approval history, document handling, APIs, automated tests, repository boundaries, and guarded tooling.',
+    challenge: 'Allowing automation to assist operational work without bypassing authorization, validation, approval rules, or auditability.',
+    outcome: 'A more structured and auditable work-order process with test coverage and a safe foundation for AI-assisted operations.',
+  },
+  P811: {
+    role: 'Full-stack and decision-workflow engineering',
+    problem: 'Quality decisions depended on laboratory results, product specifications, approval history, and formal documents that had to remain consistent.',
+    solution: 'A workflow application connects analysis and specification data to classification rules, review steps, history, and generated output.',
+    architecture: ['Quality workflow UI', 'Laravel application', 'Analysis and specification data', 'Excel / PDF output'],
+    contribution: 'Implemented Product Classification and Final Blend modules, data handling, approval flow, history, exports, and formal PDF generation.',
+    challenge: 'Keeping decision rules, source analysis, reviewer actions, and generated documents aligned throughout revisions.',
+    outcome: 'A traceable quality workflow that keeps analysis, classification, approval, history, and formal output within one system.',
+  },
+  P8218: {
+    role: 'Backend and enterprise integration engineering',
+    problem: 'Applications needed controlled access to multiple enterprise data sources without coupling each consumer directly to legacy systems.',
+    solution: 'A domain-oriented gateway normalizes access through authentication, per-domain controls, adapters, caching, throttling, metrics, and logs.',
+    architecture: ['Application clients', 'API gateway', 'Adapters and cache', 'Oracle / Db2 / services'],
+    contribution: 'Designed domain endpoints, access controls, data-source adapters, cache behaviour, request logging, metrics, and operational documentation.',
+    challenge: 'Normalizing different legacy interfaces while controlling latency, access, failure behaviour, and observability at one boundary.',
+    outcome: 'A reusable integration layer that reduces direct legacy coupling and provides a clearer operational and security boundary.',
+  },
+  P8226: {
+    role: 'Application and workflow architecture',
+    problem: 'Production planning required structured items, batches, rates, schedules, revisions, and multi-step approval with formal output.',
+    solution: 'A planning domain combines timeline views with configurable approval rules, revision history, access control, and signed document generation.',
+    architecture: ['Planning interface', 'Laravel domain', 'Approval and revision rules', 'Relational data / PDF'],
+    contribution: 'Built planning models, Gantt presentation, approval configuration, revision handling, role controls, tests, and signed PDF output.',
+    challenge: 'Keeping timeline changes, calculated planning values, revisions, and approval state coherent as a schedule evolves.',
+    outcome: 'A controlled planning workflow where schedule preparation, review, revision, and formal release remain traceable.',
+  },
+  P8236: {
+    role: 'Identity and platform engineering',
+    problem: 'Employees and applications needed a shared identity, access, and service entry point across different authentication and application models.',
+    solution: 'An identity platform combines Microsoft login, OAuth/JWT, client management, access mapping, employee synchronization, and shared services.',
+    architecture: ['Employees and clients', 'SSO / OAuth / JWT', 'Access mapping and audit', 'Applications / Microsoft 365'],
+    contribution: 'Implemented login and recovery flows, OAuth clients, token verification, application assignment, access mapping, synchronization, and audit features.',
+    challenge: 'Keeping user, role, client, redirect, token, and application-access rules consistent across multiple integration paths.',
+    outcome: 'A centralized identity and portal foundation that gives applications a consistent access model and users a shared entry point.',
+  },
+  PY01: {
+    role: 'Applied AI, backend, and mobile engineering',
+    problem: 'Attendance at a physical gate needed to be hands-free while preventing repeated records and supporting controlled administration.',
+    solution: 'On-device detection triggers server-side recognition, vector comparison, policy checks, deduplication, and an auditable attendance record.',
+    architecture: ['Flutter gate device', 'FastAPI recognition', 'DeepFace / pgvector', 'Policy and attendance services'],
+    contribution: 'Built detection and enrollment flows, recognition services, vector search, duplicate prevention, multi-device handling, administration, and reporting.',
+    challenge: 'Coordinating detection, recognition confidence, device behaviour, time-window policy, and duplicate prevention as one reliable flow.',
+    outcome: 'A complete computer-vision workflow connecting edge capture, recognition, attendance policy, administration, and reporting.',
+  },
 };
 
 const featuredProjectsEl = document.getElementById('featuredProjects');
 const projectCatalogEl = document.getElementById('projectCatalog');
+const projectArchiveEl = document.getElementById('projectArchive');
 const projectFiltersEl = document.getElementById('projectFilters');
 const projectSearchEl = document.getElementById('projectSearch');
 const projectResultCountEl = document.getElementById('projectResultCount');
@@ -348,6 +406,19 @@ function projectFlow(project) {
   `;
 }
 
+function architectureDiagram(nodes, title) {
+  if (!nodes?.length) return '';
+
+  return `
+    <div class="architecture" aria-label="Architecture for ${escapeHtml(title)}">
+      ${nodes.map((node, index) => `
+        <span class="architecture__node">${escapeHtml(node)}</span>
+        ${index < nodes.length - 1 ? '<span class="architecture__arrow" aria-hidden="true">→</span>' : ''}
+      `).join('')}
+    </div>
+  `;
+}
+
 function projectLinks(project) {
   if (project.scope !== 'public') return '';
 
@@ -381,42 +452,58 @@ function projectLinks(project) {
   `;
 }
 
-function featuredProjectCard(project, index) {
-  const visual = projectVisuals[project.category] || '⌁';
+function featuredProjectCard(project) {
+  const study = featuredCaseStudies[project.code];
+  if (!study) return '';
+
   return `
-    <article class="project-card project-card--featured project-enter" style="--project-index:${index}">
-      <div class="project-card__visual" aria-hidden="true">
-        <span class="project-card__code">${project.code}</span>
-        <span class="project-card__signal">${visual}</span>
-        <span class="project-card__category">${project.category}</span>
-      </div>
-      <div class="project-card__body">
-        <div class="project-card__meta"><span>${project.period}</span><span>Selected case study</span></div>
-        <h3 class="project-card__title">${project.title}</h3>
-        <p class="project-card__desc">${project.summary}</p>
-        ${projectFlow(project)}
+    <article class="case-study project-enter">
+      <header class="case-study__header">
+        <div class="case-study__meta">
+          <span>${project.code}</span><span>${escapeHtml(project.category)}</span><span>${escapeHtml(project.period)}</span>
+        </div>
+        <h3>${escapeHtml(project.title)}</h3>
+        <p class="case-study__role">${escapeHtml(study.role)}</p>
+        <p class="case-study__summary">${escapeHtml(project.summary)}</p>
         <div class="project-card__badges">${projectBadges(project)}</div>
-        <div class="project-card__tags">${project.stack.map((item) => `<span class="tag">${item}</span>`).join('')}</div>
+        <div class="project-card__tags">${project.stack.map((item) => `<span class="tag">${escapeHtml(item)}</span>`).join('')}</div>
         ${projectLinks(project)}
-        <div class="project-card__privacy"><span aria-hidden="true">◌</span> ${project.scope === 'public' ? 'Public product' : 'Private case study — sanitized'}</div>
+      </header>
+      <div class="case-study__content">
+        <div class="case-study__story">
+          <div><span>Problem</span><p>${escapeHtml(study.problem)}</p></div>
+          <div><span>Solution</span><p>${escapeHtml(study.solution)}</p></div>
+          <div><span>Result</span><p>${escapeHtml(study.outcome)}</p></div>
+        </div>
+        ${projectFlow(project)}
+        <details class="case-study__details">
+          <summary>Architecture and engineering notes <span aria-hidden="true">+</span></summary>
+          <div class="case-study__details-body">
+            ${architectureDiagram(study.architecture, project.title)}
+            <dl>
+              <div><dt>My contribution</dt><dd>${escapeHtml(study.contribution)}</dd></div>
+              <div><dt>Technical challenge</dt><dd>${escapeHtml(study.challenge)}</dd></div>
+            </dl>
+          </div>
+        </details>
+        <p class="case-study__privacy">${project.scope === 'public' ? 'Public product' : 'Internal system · details sanitized'}</p>
       </div>
     </article>
   `;
 }
 
-function catalogProjectCard(project, index) {
+function catalogProjectCard(project) {
   return `
-    <article class="catalog-card project-enter" style="--project-index:${index}">
+    <article class="catalog-card project-enter">
       <div class="catalog-card__top">
-        <span class="catalog-card__code">${project.code}</span>
-        <span class="catalog-card__period">${project.period}</span>
+        <span class="catalog-card__code">${escapeHtml(project.code)}</span>
+        <span class="catalog-card__period">${escapeHtml(project.period)}</span>
       </div>
-      <p class="catalog-card__category">${project.category}</p>
-      <h3>${project.title}</h3>
-      <p class="catalog-card__desc">${project.summary}</p>
-      ${projectFlow(project)}
+      <p class="catalog-card__category">${escapeHtml(project.category)}</p>
+      <h3>${escapeHtml(project.title)}</h3>
+      <p class="catalog-card__desc">${escapeHtml(project.summary)}</p>
       <div class="project-card__badges">${projectBadges(project)}</div>
-      <div class="catalog-card__stack">${project.stack.slice(0, 4).map((item) => `<span>${item}</span>`).join('')}</div>
+      <div class="catalog-card__stack">${project.stack.slice(0, 4).map((item) => `<span>${escapeHtml(item)}</span>`).join('')}</div>
       ${projectLinks(project)}
     </article>
   `;
@@ -428,7 +515,12 @@ function matchesProjectFilter(project) {
     || (activeProjectFilter === 'featured' && project.featured)
     || activeProjectFilter === project.scope
     || (activeProjectFilter === 'ai' && project.ai);
-  const searchable = [project.code, project.title, project.category, project.summary, projectFlows[project.code], ...project.stack]
+  const study = featuredCaseStudies[project.code];
+  const searchable = [
+    project.code, project.title, project.category, project.summary, projectFlows[project.code],
+    study?.problem, study?.solution, study?.contribution, study?.challenge, study?.outcome,
+    ...project.stack,
+  ]
     .join(' ')
     .toLowerCase();
   return filterMatch && (!query || searchable.includes(query));
@@ -446,9 +538,9 @@ function renderProjects() {
   featuredProjectsEl.hidden = featured.length === 0;
   projectCatalogEl.hidden = catalog.length === 0;
   projectEmptyEl.hidden = filtered.length !== 0;
+  projectArchiveEl.hidden = catalog.length === 0 && filtered.length > 0;
+  projectArchiveEl.classList.toggle('is-empty', filtered.length === 0);
   projectResultCountEl.textContent = `${filtered.length} project${filtered.length === 1 ? '' : 's'}`;
-
-  attachProjectCardTilt();
 }
 
 projectFiltersEl?.addEventListener('click', (event) => {
@@ -466,60 +558,26 @@ projectFiltersEl?.addEventListener('click', (event) => {
 projectSearchEl?.addEventListener('input', renderProjects);
 renderProjects();
 
-
-const typedEl = document.getElementById('typedText');
-let phraseIdx = 0;
-let charIdx = 0;
-let isDeleting = false;
-let typingSpeed = 80;
-
-function typeEffect() {
-  const current = phrases[phraseIdx];
-
-  if (isDeleting) {
-    typedEl.textContent = current.substring(0, charIdx - 1);
-    charIdx--;
-    typingSpeed = 40;
-  } else {
-    typedEl.textContent = current.substring(0, charIdx + 1);
-    charIdx++;
-    typingSpeed = 80;
-  }
-
-  if (!isDeleting && charIdx === current.length) {
-    typingSpeed = 2000; // pause at end
-    isDeleting = true;
-  } else if (isDeleting && charIdx === 0) {
-    isDeleting = false;
-    phraseIdx = (phraseIdx + 1) % phrases.length;
-    typingSpeed = 500; // pause before next phrase
-  }
-
-  setTimeout(typeEffect, typingSpeed);
-}
-
-// Start typing after a short delay
-setTimeout(typeEffect, 1500);
-
 // ---- Scroll Reveal (IntersectionObserver) ----
 const revealElements = document.querySelectorAll('.reveal');
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const delay = entry.target.dataset.delay || 0;
-        setTimeout(() => {
+if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+  revealElements.forEach((element) => element.classList.add('is-visible'));
+} else {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-        }, delay * 100);
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
-);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -24px 0px' }
+  );
 
-revealElements.forEach((el) => revealObserver.observe(el));
+  revealElements.forEach((element) => revealObserver.observe(element));
+}
 
 // ---- Navbar scroll effect ----
 const navbar = document.getElementById('navbar');
@@ -537,18 +595,29 @@ window.addEventListener('scroll', handleNavScroll, { passive: true });
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
+function setNavigationOpen(isOpen) {
+  navToggle.classList.toggle('active', isOpen);
+  navLinks.classList.toggle('open', isOpen);
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
 navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('active');
-  navLinks.classList.toggle('open');
-  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+  setNavigationOpen(!navLinks.classList.contains('open'));
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && navLinks.classList.contains('open')) {
+    setNavigationOpen(false);
+    navToggle.focus();
+  }
 });
 
 // Close mobile nav on link click
 navLinks.querySelectorAll('.nav-link').forEach((link) => {
   link.addEventListener('click', () => {
-    navToggle.classList.remove('active');
-    navLinks.classList.remove('open');
-    document.body.style.overflow = '';
+    setNavigationOpen(false);
   });
 });
 
@@ -558,87 +627,13 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     e.preventDefault();
     const target = document.querySelector(anchor.getAttribute('href'));
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+      target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     }
   });
 });
 
-// ---- Counter animation for stats ----
-// Coding experience grows automatically every calendar year from 2019.
-document.querySelectorAll('.stat__number[data-start-year]').forEach((el) => {
-  const startYear = Number.parseInt(el.dataset.startYear, 10);
-  const yearsCoding = Math.max(0, new Date().getFullYear() - startYear);
-  el.dataset.count = String(yearsCoding);
-});
-
-const statNumbers = document.querySelectorAll('.stat__number[data-count]');
-
-const counterObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.count, 10);
-        let current = 0;
-        const increment = Math.max(1, Math.floor(target / 40));
-        const duration = 1200;
-        const stepTime = duration / (target / increment);
-
-        const counter = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(counter);
-          }
-          el.textContent = current;
-        }, stepTime);
-
-        counterObserver.unobserve(el);
-      }
-    });
-  },
-  { threshold: 0.5 }
-);
-
-statNumbers.forEach((el) => counterObserver.observe(el));
-
-// ---- Skill cards: animate progress bars on reveal ----
-const skillCards = document.querySelectorAll('.skill-card');
-
-const skillObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const delay = entry.target.dataset.delay || 0;
-        setTimeout(() => {
-          entry.target.classList.add('is-visible');
-        }, delay * 100);
-        skillObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-skillCards.forEach((card) => skillObserver.observe(card));
-
-// ---- Subtle tilt effect on featured project cards ----
-function attachProjectCardTilt() {
-  if (!window.matchMedia('(pointer: fine)').matches) return;
-
-  document.querySelectorAll('.project-card--featured').forEach((card) => {
-    card.addEventListener('mousemove', (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `translateY(-6px) perspective(800px) rotateX(${-y * 2.5}deg) rotateY(${x * 2.5}deg)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
-}
+const currentYearEl = document.getElementById('currentYear');
+if (currentYearEl) currentYearEl.textContent = String(new Date().getFullYear());
 
 // ---- Active nav link on scroll ----
 const sections = document.querySelectorAll('section[id]');
@@ -653,28 +648,14 @@ function highlightNav() {
     const link = document.querySelector(`.nav-link[href="#${id}"]`);
 
     if (link) {
-      if (scrollY >= top && scrollY < top + height) {
-        link.style.color = 'var(--neon-primary)';
-      } else {
-        link.style.color = '';
-      }
+      const isCurrent = scrollY >= top && scrollY < top + height;
+      link.classList.toggle('is-active', isCurrent);
+      if (isCurrent) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     }
   });
 }
 
 window.addEventListener('scroll', highlightNav, { passive: true });
-
-// ---- Parallax glow orbs on mouse move (desktop only) ----
-if (window.matchMedia('(min-width: 768px)').matches) {
-  const glows = document.querySelectorAll('.hero__glow');
-
-  document.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
-
-    glows.forEach((glow, i) => {
-      const factor = i === 0 ? 1 : -0.7;
-      glow.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
-    });
-  });
-}
+handleNavScroll();
+highlightNav();

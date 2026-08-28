@@ -5,327 +5,319 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Handika — AI-Enhanced Full-Stack Developer building enterprise workflows, integration platforms, cloud applications, mobile tools, and practical AI systems." />
-  <meta name="theme-color" content="#0a0a0f" />
-  <title>Handika | AI-Enhanced Full-Stack Developer</title>
+    content="Full-stack and systems engineer specializing in backend systems, enterprise integrations, web and mobile applications, infrastructure, automation, and applied AI." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#0b0d10" />
+  <meta name="color-scheme" content="dark" />
+
+  <title>Handika — Full-Stack &amp; Systems Engineer</title>
+  <link rel="canonical" href="https://handikahevn.my.id/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Handika — Engineering Portfolio" />
+  <meta property="og:title" content="Handika — Full-Stack &amp; Systems Engineer" />
+  <meta property="og:description"
+    content="Production systems across backend, enterprise integrations, web, mobile, infrastructure, automation, and applied AI." />
+  <meta property="og:url" content="https://handikahevn.my.id/" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Handika — Full-Stack &amp; Systems Engineer" />
+  <meta name="twitter:description"
+    content="Production systems across backend, enterprise integrations, web, mobile, infrastructure, automation, and applied AI." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://handikahevn.my.id/#person",
+        "name": "Handika",
+        "url": "https://handikahevn.my.id/",
+        "email": "mailto:handikahevn24@gmail.com",
+        "jobTitle": "Full-Stack & Systems Engineer",
+        "sameAs": [
+          "https://github.com/handikahevn24",
+          "https://www.linkedin.com/in/mohammad-handika-20a254120/"
+        ],
+        "knowsAbout": [
+          "Backend engineering",
+          "Enterprise system integration",
+          "API design",
+          "Web and mobile applications",
+          "Databases",
+          "Infrastructure and deployment",
+          "Automation",
+          "Applied AI"
+        ]
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://handikahevn.my.id/#profile",
+        "url": "https://handikahevn.my.id/",
+        "name": "Handika — Full-Stack & Systems Engineer",
+        "mainEntity": { "@id": "https://handikahevn.my.id/#person" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://handikahevn.my.id/#website",
+        "url": "https://handikahevn.my.id/",
+        "name": "Handika — Engineering Portfolio",
+        "publisher": { "@id": "https://handikahevn.my.id/#person" }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
-  <!-- ============ NAVBAR ============ -->
-  <nav class="navbar" id="navbar">
-    <a href="#hero" class="nav-logo">
-      <span class="logo-bracket">&lt;</span>H<span class="logo-bracket">/&gt;</span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#contact" class="nav-link nav-link--cta">Contact</a></li>
-    </ul>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <nav class="navbar" id="navbar" aria-label="Primary navigation">
+    <div class="nav-shell">
+      <a href="#hero" class="nav-logo" aria-label="Handika, back to top">
+        <span class="logo-bracket" aria-hidden="true">&lt;</span>H<span class="logo-bracket" aria-hidden="true">/&gt;</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-controls="navLinks"
+        aria-expanded="false">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#capabilities" class="nav-link">Capabilities</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Work</a></li>
+        <li><a href="#contact" class="nav-link nav-link--cta">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="hero">
-    <div class="hero__grid-bg"></div>
-    <div class="hero__glow hero__glow--1"></div>
-    <div class="hero__glow hero__glow--2"></div>
-    <div class="hero__content">
-      <div class="hero__terminal">
-        <div class="terminal__bar">
-          <span class="terminal__dot terminal__dot--red"></span>
-          <span class="terminal__dot terminal__dot--yellow"></span>
-          <span class="terminal__dot terminal__dot--green"></span>
-          <span class="terminal__title">handika@dev ~</span>
+  <main id="main-content">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container hero__layout">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Handika · Full-Stack &amp; Systems Engineer</p>
+          <h1 id="hero-title">I build production systems for complex operations.</h1>
+          <p class="hero__lead">I design, build, integrate, and maintain backend services, web and mobile
+            applications, enterprise workflows, and the infrastructure that supports them.</p>
+          <p class="hero__support">My work connects modern applications with business processes, databases, legacy
+            systems, cloud services, automation, and applied AI—without losing sight of reliability, security, or
+            maintainability.</p>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">View Selected Work</a>
+            <a href="#contact" class="btn btn--secondary">Contact Me</a>
+          </div>
         </div>
-        <div class="terminal__body">
-          <p class="terminal__line"><span class="terminal__prompt">$</span> handika.init()</p>
-          <p class="terminal__line terminal__line--output">
-            <span class="terminal__arrow">→</span> Loading profile<span class="terminal__dots">...</span>
-          </p>
-        </div>
+        <aside class="hero__brief" aria-label="Engineering focus">
+          <p class="hero__brief-label">Engineering focus</p>
+          <dl>
+            <div><dt>Core</dt><dd>Backend, APIs, application architecture</dd></div>
+            <div><dt>Systems</dt><dd>Enterprise workflows and integrations</dd></div>
+            <div><dt>Delivery</dt><dd>Infrastructure, automation, production support</dd></div>
+            <div><dt>Additional</dt><dd>Mobile and pragmatic applied AI</dd></div>
+          </dl>
+        </aside>
       </div>
-      <h1 class="hero__name">
-        <span class="hero__greeting">Hello, I'm</span>
-        Handika<span class="hero__dot">.</span>
-      </h1>
-      <p class="hero__role">
-        <span class="hero__role-static">AI-Enhanced Full-Stack Developer</span>
-        <span class="hero__role-separator">—</span>
-        <span class="hero__role-live">
-          <span class="hero__role-dynamic" id="typedText"></span>
-          <span class="hero__cursor">|</span>
-        </span>
-      </p>
-      <p class="hero__tagline">I turn operational complexity into reliable software — from enterprise workflows and
-        integration APIs to cloud products, mobile tools, and practical AI.</p>
-      <div class="hero__cta">
-        <a href="#projects" class="btn btn--primary" id="btnProjects">
-          <span class="btn__icon">⟐</span> View Projects
-        </a>
-        <a href="#contact" class="btn btn--outline" id="btnContact">
-          <span class="btn__icon">✉</span> Contact Me
-        </a>
-      </div>
-    </div>
-    <div class="hero__scroll-indicator">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">01 // About</span>
-        <h2 class="section__title">Who I Am</h2>
-      </div>
-      <div class="about__grid">
-        <div class="about__text reveal">
-          <p class="about__intro">
-            I'm an <em class="text-accent">AI-enhanced full-stack developer and systems builder</em>, combining
-            full-stack engineering judgment with modern AI workflows to turn operational complexity into software
-            people can actually rely on.
-          </p>
-          <p>
-            My work spans <strong>enterprise workflows</strong>, <strong>system integration</strong>, mobile apps,
-            document automation, cloud platforms, and applied AI. I care about traceability, security, and making
-            difficult processes feel straightforward.
-          </p>
-          <p>
-            I work across <span class="text-highlight">Laravel</span>, <span class="text-highlight">Flutter</span>,
-            <span class="text-highlight">React</span>, <span class="text-highlight">Python</span>, enterprise
-            databases, and <span class="text-highlight">Cloudflare</span> — choosing tools around the problem rather
-            than forcing every project into the same stack.
-          </p>
-          <div class="about__stats">
-            <div class="stat">
-              <span class="stat__number" data-count="20">0</span><span class="stat__plus">+</span>
-              <span class="stat__label">Tech Skills</span>
-            </div>
-            <div class="stat">
-              <span class="stat__number" data-count="37">0</span><span class="stat__plus">+</span>
-              <span class="stat__label">Selected Projects</span>
-            </div>
-            <div class="stat">
-              <span class="stat__number" data-start-year="2019">0</span><span class="stat__plus">+</span>
-              <span class="stat__label">Years Coding</span>
-            </div>
-          </div>
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">01 / About</span>
+          <h2 class="section__title" id="about-title">Engineering practical systems end to end.</h2>
         </div>
-        <div class="about__visual reveal">
-          <div class="about__card">
-            <div class="about__avatar">
-              <div class="avatar__ring"></div>
-              <div class="avatar__inner">
-                <span class="avatar__letter">H</span>
-              </div>
-              <div class="avatar__orbit">
-                <span class="orbit__dot"></span>
-              </div>
-            </div>
-            <div class="about__card-info">
-              <span class="card-info__name">Handika</span>
-              <span class="card-info__role">AI-Enhanced Full-Stack Developer</span>
-              <span class="card-info__status">
-                <span class="status__dot"></span> Available for work
-              </span>
-            </div>
+        <div class="about__layout">
+          <div class="about__copy reveal">
+            <p class="about__intro">I am a software engineer focused on building and maintaining production systems
+              that support real operational work.</p>
+            <p>My projects span backend services, web applications, mobile tools, enterprise databases, identity,
+              document workflows, infrastructure, automation, and system integration. I often work at the boundary
+              between a new application and an existing business or technology constraint.</p>
+            <p>I use AI when it improves delivery, diagnostics, automation, or the product itself. The engineering
+              fundamentals—clear boundaries, controlled access, traceability, testing, and maintainable code—remain
+              the foundation.</p>
+          </div>
+          <div class="about__facts reveal" aria-label="Portfolio facts">
+            <div class="fact"><strong>2019</strong><span>Building software since</span></div>
+            <div class="fact"><strong>37</strong><span>Documented projects</span></div>
+            <div class="fact"><strong>7</strong><span>Capability groups</span></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ SKILLS ============ -->
-  <section class="section skills" id="skills">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">02 // Skills</span>
-        <h2 class="section__title">Tech Stack</h2>
-        <p class="section__subtitle">Technologies I work with daily to build production-grade applications.</p>
-      </div>
-      <div class="skills__grid">
-        <div class="skill-card reveal" data-delay="0">
-          <div class="skill-card__icon">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" />
-          </div>
-          <span class="skill-card__name">PHP</span>
+    <section class="section capabilities" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">02 / Capabilities</span>
+          <h2 class="section__title" id="capabilities-title">Capabilities, not an icon wall.</h2>
+          <p class="section__subtitle">Technology choices are organized around the engineering problems they help
+            solve.</p>
         </div>
-        <div class="skill-card reveal" data-delay="1">
-          <div class="skill-card__icon">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
-              alt="Laravel" />
-          </div>
-          <span class="skill-card__name">Laravel</span>
-        </div>
-        <div class="skill-card reveal" data-delay="2">
-          <div class="skill-card__icon">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" />
-          </div>
-          <span class="skill-card__name">Git</span>
-        </div>
-        <div class="skill-card reveal" data-delay="3">
-          <div class="skill-card__icon">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-              alt="Docker" />
-          </div>
-          <span class="skill-card__name">Docker</span>
-        </div>
-        <div class="skill-card reveal" data-delay="4">
-          <div class="skill-card__icon">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
-          </div>
-          <span class="skill-card__name">React</span>
-        </div>
-        <div class="skill-card reveal" data-delay="5">
-          <div class="skill-card__icon">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-              alt="Node.js" />
-          </div>
-          <span class="skill-card__name">Node.js</span>
-        </div>
-        <div class="skill-card reveal" data-delay="6">
-          <div class="skill-card__icon">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-              alt="Python" />
-          </div>
-          <span class="skill-card__name">Python</span>
-        </div>
-        <div class="skill-card reveal" data-delay="7">
-          <div class="skill-card__icon">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg"
-              alt="DevOps" />
-          </div>
-          <span class="skill-card__name">DevOps</span>
-        </div>
-        <div class="skill-card reveal" data-delay="8">
-          <div class="skill-card__icon">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg"
-              alt="Cloudflare" />
-          </div>
-          <span class="skill-card__name">Cloudflare</span>
-        </div>
-        <div class="skill-card reveal" data-delay="9">
-          <div class="skill-card__icon">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg"
-              alt="Firebase" />
-          </div>
-          <span class="skill-card__name">Firebase</span>
+        <div class="capability-grid">
+          <article class="capability-card reveal">
+            <p class="capability-card__index">01</p><h3>Backend &amp; Application</h3>
+            <p>Domain logic, workflow applications, APIs, queues, document generation, and maintainable service boundaries.</p>
+            <ul><li>PHP / Laravel</li><li>Node.js / Hono</li><li>Python / FastAPI / Flask</li><li>REST APIs</li></ul>
+          </article>
+          <article class="capability-card reveal">
+            <p class="capability-card__index">02</p><h3>Frontend &amp; Web</h3>
+            <p>Operational interfaces and public products designed around clarity, performance, and responsive use.</p>
+            <ul><li>React / Astro</li><li>TypeScript</li><li>Blade</li><li>HTML / CSS / JavaScript</li></ul>
+          </article>
+          <article class="capability-card reveal">
+            <p class="capability-card__index">03</p><h3>Mobile</h3>
+            <p>Field and business applications with scanning, offline data, device APIs, and secure backend integration.</p>
+            <ul><li>Flutter / Dart</li><li>Riverpod / Provider</li><li>Drift / SQLite</li><li>QR, camera, and device flows</li></ul>
+          </article>
+          <article class="capability-card reveal">
+            <p class="capability-card__index">04</p><h3>Data</h3>
+            <p>Relational data modelling, legacy access, caching, vector search, reporting, and controlled data movement.</p>
+            <ul><li>Oracle / Db2</li><li>PostgreSQL / MySQL</li><li>Redis / D1 / SQLite</li><li>pgvector / Excel pipelines</li></ul>
+          </article>
+          <article class="capability-card reveal">
+            <p class="capability-card__index">05</p><h3>Infrastructure</h3>
+            <p>Repeatable deployment and production support through containers, edge platforms, queues, caching, and monitoring.</p>
+            <ul><li>Docker</li><li>Cloudflare Workers / Pages</li><li>CI/CD and quality gates</li><li>Logging and monitoring</li></ul>
+          </article>
+          <article class="capability-card reveal">
+            <p class="capability-card__index">06</p><h3>Integration &amp; Identity</h3>
+            <p>Controlled interfaces between applications, enterprise systems, identity providers, files, and external services.</p>
+            <ul><li>OAuth 2.0 / JWT / SSO</li><li>Microsoft Graph</li><li>Webhooks / SFTP</li><li>Enterprise API gateways</li></ul>
+          </article>
+          <article class="capability-card reveal">
+            <p class="capability-card__index">07</p><h3>Applied AI &amp; Automation</h3>
+            <p>AI used as a practical engineering capability for computer vision, guarded tooling, and workflow automation.</p>
+            <ul><li>Face recognition</li><li>MCP / agent tooling</li><li>Schedulers and background jobs</li><li>Document automation</li></ul>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ PROJECTS ============ -->
-  <section class="section projects" id="projects">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">03 // Projects</span>
-        <h2 class="section__title">Systems I've Shipped</h2>
-        <p class="section__subtitle">37 selected projects across enterprise operations, cloud platforms, mobile,
-          automation, and AI — presented without confidential business data.</p>
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="container experience__layout">
+        <div class="section__header reveal">
+          <span class="section__label">03 / Engineering Practice</span>
+          <h2 class="section__title" id="experience-title">Across application, data, and operations.</h2>
+          <p class="section__subtitle">Evidence drawn from the systems documented in this portfolio—not a generic job-description list.</p>
+        </div>
+        <div class="experience__content reveal">
+          <ul class="ownership-list">
+            <li><strong>Application ownership</strong><span>Designed and maintained workflow applications from domain rules and data models through user-facing delivery.</span></li>
+            <li><strong>Enterprise integration</strong><span>Built controlled interfaces between modern applications and Oracle, Db2, Microsoft 365, WMS, and external services.</span></li>
+            <li><strong>Backend and API design</strong><span>Implemented authentication, authorization, validation, throttling, caching, queues, audit logs, and failure handling.</span></li>
+            <li><strong>Production delivery</strong><span>Containerized services, configured cloud deployments, and added logging, monitoring, retries, tests, and operational diagnostics.</span></li>
+            <li><strong>Cross-platform systems</strong><span>Delivered web, mobile, automation, document-processing, and computer-vision components as parts of larger workflows.</span></li>
+          </ul>
+          <div class="engineering-signals" aria-label="Engineering signals">
+            <span>System design</span><span>API design</span><span>Authentication</span><span>Database design</span>
+            <span>Legacy integration</span><span>Production debugging</span><span>Containerization</span>
+            <span>Observability</span><span>Automation</span><span>Security considerations</span>
+          </div>
+        </div>
       </div>
-      <div class="project-disclosure reveal" role="note">
-        <span class="project-disclosure__icon">◇</span>
+    </section>
+
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">04 / Selected Work</span>
+          <h2 class="section__title" id="projects-title">Systems selected for engineering depth.</h2>
+          <p class="section__subtitle">Eight case studies cover backend architecture, enterprise integration, mobile,
+            infrastructure, workflow design, identity, cloud products, and applied AI. The remaining projects stay
+            available in the archive.</p>
+        </div>
+
+        <aside class="project-disclosure reveal" aria-label="Internal project privacy note">
+          <strong>Privacy-safe case studies.</strong>
+          <p>Internal projects use generalized titles and sanitized descriptions. Credentials, private endpoints,
+            organization records, proprietary datasets, and production screenshots are not published.</p>
+        </aside>
+
+        <div class="project-toolbar reveal" aria-label="Project filters">
+          <div class="project-filters" id="projectFilters" role="group" aria-label="Filter projects">
+            <button class="project-filter is-active" type="button" data-filter="all" aria-pressed="true">All <span>37</span></button>
+            <button class="project-filter" type="button" data-filter="featured" aria-pressed="false">Featured <span>8</span></button>
+            <button class="project-filter" type="button" data-filter="internal" aria-pressed="false">Internal</button>
+            <button class="project-filter" type="button" data-filter="public" aria-pressed="false">Public</button>
+            <button class="project-filter" type="button" data-filter="hybrid" aria-pressed="false">Hybrid</button>
+            <button class="project-filter" type="button" data-filter="ai" aria-pressed="false">AI-assisted</button>
+          </div>
+          <label class="project-search">
+            <span>Search projects</span>
+            <input id="projectSearch" type="search" placeholder="Title, capability, or technology" autocomplete="off" />
+          </label>
+        </div>
+
+        <div class="project-results reveal" aria-live="polite">
+          <span id="projectResultCount">37 projects</span>
+          <span>8 detailed case studies · 29 archive entries</span>
+        </div>
+
+        <div class="projects__featured" id="featuredProjects">
+          <!-- Detailed case studies are rendered from the privacy-safe data in main.js. -->
+        </div>
+
+        <noscript>
+          <div class="no-js-projects">
+            <h3>Selected engineering work</h3>
+            <ul>
+              <li><strong>Enterprise Integration Gateway</strong> — a controlled API layer across enterprise data sources with authentication, throttling, caching, metrics, and audit logging.</li>
+              <li><strong>Enterprise SSO &amp; Employee Portal</strong> — identity, OAuth/JWT, access mapping, Microsoft login, employee synchronization, and shared services.</li>
+              <li><strong>GA Work Order</strong> — a traceable approval workflow with documents, APIs, tests, and guarded AI-assisted tooling.</li>
+              <li><strong>Product Classification &amp; Final Blend</strong> — a quality decision workflow connecting laboratory results, specifications, approvals, and formal documents.</li>
+              <li><strong>Material Issue &amp; Return Mobile</strong> — a Flutter field application integrating scanning and approvals with enterprise inventory data.</li>
+              <li><strong>Production Schedule</strong> — planning, approval, revision, timeline, and signed document workflows.</li>
+              <li><strong>Hands-Free Face Recognition Attendance</strong> — on-device detection, server-side recognition, vector search, and attendance policy controls.</li>
+              <li><strong>Cloudflare Store Platform</strong> — an edge-first storefront and order system using Workers, D1, and a multi-tenant foundation.</li>
+            </ul>
+          </div>
+        </noscript>
+
+        <div class="project-archive" id="projectArchive">
+          <div class="project-archive__heading reveal">
+            <div><span class="section__label">Project archive</span><h3>Additional systems and utilities.</h3></div>
+            <p>The archive keeps the breadth visible without giving every project the same visual weight.</p>
+          </div>
+          <div class="project-catalog" id="projectCatalog"></div>
+          <p class="project-empty" id="projectEmpty" hidden>No projects match this filter.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__layout reveal">
         <div>
-          <strong>Privacy-safe case studies</strong>
-          <p>Internal projects use generalized titles and synthetic descriptions. No credentials, private endpoints,
-            company records, or production data are published.</p>
+          <span class="section__label">05 / Contact</span>
+          <h2 class="contact__title" id="contact-title">Discuss a system, integration, or product.</h2>
+          <p class="contact__desc">For engineering roles, remote opportunities, or project discussions, email is the
+            most direct way to reach me.</p>
+        </div>
+        <div class="contact__actions">
+          <a href="mailto:handikahevn24@gmail.com" class="contact__email">handikahevn24@gmail.com</a>
+          <div class="contact__links">
+            <a href="https://github.com/handikahevn24" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/mohammad-handika-20a254120/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </div>
-      <div class="project-toolbar reveal" aria-label="Project filters">
-        <div class="project-filters" id="projectFilters" role="group" aria-label="Filter projects">
-          <button class="project-filter is-active" type="button" data-filter="all">All <span>37</span></button>
-          <button class="project-filter" type="button" data-filter="featured">Featured <span>8</span></button>
-          <button class="project-filter" type="button" data-filter="internal">Internal</button>
-          <button class="project-filter" type="button" data-filter="public">Public</button>
-          <button class="project-filter" type="button" data-filter="hybrid">Hybrid</button>
-          <button class="project-filter" type="button" data-filter="ai">AI-assisted</button>
-        </div>
-        <label class="project-search">
-          <span class="sr-only">Search projects</span>
-          <span aria-hidden="true">⌕</span>
-          <input id="projectSearch" type="search" placeholder="Search stack or project" autocomplete="off" />
-        </label>
-      </div>
-      <div class="project-results reveal" aria-live="polite">
-        <span id="projectResultCount">37 projects</span>
-        <span class="project-results__legend"><i class="legend-dot legend-dot--internal"></i> Internal
-          <i class="legend-dot legend-dot--ai"></i> AI-assisted</span>
-      </div>
-      <div class="projects__grid projects__grid--featured" id="featuredProjects">
-        <!-- Featured project cards are rendered from privacy-safe data in main.js. -->
-      </div>
-      <div class="project-archive">
-        <div class="project-archive__heading reveal">
-          <span class="section__label">Project archive</span>
-          <h3>More systems, one engineering thread.</h3>
-          <p>Operational tools, APIs, mobile applications, and workflow platforms built across multiple generations of
-            PHP, Laravel, JavaScript, Flutter, Python, and cloud infrastructure.</p>
-        </div>
-        <div class="project-catalog" id="projectCatalog"></div>
-        <p class="project-empty" id="projectEmpty" hidden>No projects match this filter.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ============ CONTACT ============ -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="contact__content reveal">
-        <span class="section__label">04 // Contact</span>
-        <h2 class="contact__title">Let's Work<br /><span class="text-accent">Together</span><span
-            class="hero__dot">.</span></h2>
-        <p class="contact__desc">Have a project in mind? Let's talk about how I can help bring your ideas to life.</p>
-        <a href="mailto:handikahevn24@gmail.com" class="contact__email" id="contactEmail">
-          <span class="contact__email-icon">✉</span>
-          handikahevn24@gmail.com
-        </a>
-        <div class="contact__cta">
-          <a href="mailto:handikahevn24@gmail.com" class="btn btn--primary btn--large" id="btnHire">
-            <span class="btn__icon">🚀</span> Get In Touch
-          </a>
-        </div>
-        <div class="contact__socials">
-          <a href="https://github.com/handikahevn24" class="social-link" id="socialGithub" aria-label="GitHub"
-            target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
-              <path
-                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/mohammad-handika-20a254120/" class="social-link" id="socialLinkedin"
-            aria-label="LinkedIn" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__text">
-        <span class="footer__copy">© 2026 Handika.</span>
-        <span class="footer__built">Built with <span class="text-accent">passion</span> & clean code.</span>
-      </p>
-      <a href="#hero" class="footer__top" id="btnTop" aria-label="Back to top">↑</a>
+      <p>© <span id="currentYear">2026</span> Handika.</p>
+      <p>Lightweight static portfolio · Privacy-safe project documentation.</p>
+      <a href="#hero" class="footer__top" aria-label="Back to top">Back to top ↑</a>
     </div>
   </footer>
 
