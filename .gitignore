@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.vite/
+*.local
+
+# Local research notes may contain implementation context and must not be published.
+PORTFOLIO_PROJECT_INVENTORY.md
