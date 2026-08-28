@@ -106,7 +106,7 @@ const projects = [
   },
   {
     code: 'P808', title: 'Incident & Trouble Report System', period: 'Jun 2021—Aug 2026', scope: 'internal', ai: true,
-    category: 'Safety & Operations',
+    featured: true, category: 'Safety & Operations',
     summary: 'An incident-to-corrective-action platform covering investigation, risk, approvals, reminders, evidence, and consolidated reporting.',
     stack: ['Laravel 8', 'Queues', 'Dompdf', 'Docker', 'RBAC'],
   },
@@ -288,6 +288,15 @@ const projectFlows = {
 };
 
 const featuredCaseStudies = {
+  P808: {
+    role: 'Full-stack workflow engineering',
+    problem: 'Incident handling needed a traceable path from initial reporting through investigation, risk review, corrective action, evidence, and closure.',
+    solution: 'A Laravel workflow application connects role-based review, risk assessment, action tracking, reminders, evidence, and consolidated reporting.',
+    architecture: ['Operational interface', 'Laravel workflow', 'Roles, queues, and documents', 'Relational data / reports'],
+    contribution: 'Built and maintained incident reporting, investigation, risk assessment, approval, corrective-action, reminder, evidence, reporting, and containerized delivery workflows.',
+    challenge: 'Keeping investigation, risk, action ownership, evidence, and approval state consistent as a case moved across roles and revisions.',
+    outcome: 'A traceable incident workflow that keeps reporting, investigation, corrective actions, evidence, and closure history in one application.',
+  },
   CF01: {
     role: 'Full-stack and platform engineering',
     problem: 'A public storefront needed catalog, checkout, order tracking, and operator workflows without relying on a traditional server stack.',
@@ -361,6 +370,9 @@ const featuredCaseStudies = {
     outcome: 'A complete computer-vision workflow connecting edge capture, recognition, attendance policy, administration, and reporting.',
   },
 };
+
+const featuredProjectOrder = ['P808', 'P8236', 'FL02', 'P806', 'P811', 'P8218', 'P8226', 'PY01', 'CF01'];
+const featuredProjectRank = new Map(featuredProjectOrder.map((code, index) => [code, index]));
 
 const featuredProjectsEl = document.getElementById('featuredProjects');
 const projectCatalogEl = document.getElementById('projectCatalog');
@@ -530,7 +542,9 @@ function renderProjects() {
   if (!featuredProjectsEl || !projectCatalogEl) return;
 
   const filtered = projects.filter(matchesProjectFilter);
-  const featured = filtered.filter((project) => project.featured);
+  const featured = filtered
+    .filter((project) => project.featured)
+    .sort((first, second) => featuredProjectRank.get(first.code) - featuredProjectRank.get(second.code));
   const catalog = filtered.filter((project) => !project.featured);
 
   featuredProjectsEl.innerHTML = featured.map(featuredProjectCard).join('');
