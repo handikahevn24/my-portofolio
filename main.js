@@ -236,6 +236,7 @@ const projects = [
     category: 'Small Business',
     summary: 'A customer ordering and admin operations flow for rental units, delivery, pickup, drivers, payments, notes, and reward points.',
     stack: ['Laravel 12', 'SQLite', 'REST API', 'Blade'],
+    links: ['https://playboximy.id/'],
   },
 ];
 
@@ -432,8 +433,6 @@ function architectureDiagram(nodes, title) {
 }
 
 function projectLinks(project) {
-  if (project.scope !== 'public') return '';
-
   const links = (project.links || [])
     .map((link, index) => {
       const rawUrl = typeof link === 'string' ? link : link?.url;
