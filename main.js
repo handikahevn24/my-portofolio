@@ -385,7 +385,7 @@ const projectEmptyEl = document.getElementById('projectEmpty');
 let activeProjectFilter = 'all';
 
 function projectBadges(project) {
-  const aiLabel = project.ai ? 'AI-assisted' : 'No AI artifacts';
+  const aiLabel = project.ai ? 'AI-assisted' : 'No AI assistance';
   return `
     <span class="project-badge project-badge--${project.scope}">${scopeLabels[project.scope]}</span>
     <span class="project-badge project-badge--${project.ai ? 'ai' : 'human'}">${aiLabel}</span>
