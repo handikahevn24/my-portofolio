@@ -635,6 +635,16 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 const currentYearEl = document.getElementById('currentYear');
 if (currentYearEl) currentYearEl.textContent = String(new Date().getFullYear());
 
+const codingYearsEl = document.getElementById('codingYears');
+if (codingYearsEl) {
+  const startYear = Number(codingYearsEl.dataset.startYear);
+  const elapsedYears = new Date().getFullYear() - startYear;
+
+  if (Number.isFinite(startYear) && elapsedYears > 0) {
+    codingYearsEl.textContent = String(elapsedYears);
+  }
+}
+
 // ---- Active nav link on scroll ----
 const sections = document.querySelectorAll('section[id]');
 
